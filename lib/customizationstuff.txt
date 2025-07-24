@@ -1,0 +1,57 @@
+
+BOOK-RELATED CHANGES
+ Add/remove books → lib/data/sample_books.dart
+ Book model structure → lib/models/book_model.dart
+ Current reading state → lib/data/reading_manager.dart
+
+
+UI COLORS & THEMING
+
+ Light/Dark themes → lib/theme/app_theme.dart
+ Reading screen background → lib/pages/reader/pdf_viewer.dart
+ Primary color → ThemeData in main.dart or theme.dart
+
+
+ TEXT & FONTS
+
+Fonts used → GoogleFonts in every page
+Font size/style → Usually inside Text(...) → check for GoogleFonts.nunito(...)
+Title/author style → lib/widgets/book_tile.dart and NowReadingBar
+
+
+ SIZES & LAYOUTS
+
+Grid block size → lib/pages/home/widgets/book_grid.dart
+Card margins, padding → lib/widgets/book_tile.dart
+ Detail view size → lib/pages/book_detail_page.dart
+ Now reading bar → lib/widgets/now_reading_bar.dart
+
+
+ ROUTES & NAVIGATION
+
+ All named routes → lib/routes/app_routes.dart
+ Page transitions → wherever Navigator.pushNamed(...) is used
+
+
+FILTERS & SORT OPTIONS
+
+ Home filter buttons → lib/pages/home/widgets/filter_sheet.dart
+ Sorting by title/chapters "
+
+
+STORAGE & BOOKMARKS
+
+ Bookmark management → lib/data/bookmark_manager.dart
+ Saved data logic → lib/services/storage_service.dart
+
+
+PDF VIEWER SETTINGS
+
+PDF reader page → lib/pages/reader/pdf_viewer.dart
+ Scrolling direction, swipe, controls "
+
+
+OTHER
+ Theme → lib/theme/
+
+
