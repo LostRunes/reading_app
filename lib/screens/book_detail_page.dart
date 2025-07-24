@@ -12,7 +12,7 @@ class BookDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Expect BookModel via Navigator arguments
+
     final book = ModalRoute.of(context)!.settings.arguments as BookModel;
      final bool isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -20,7 +20,7 @@ class BookDetailPage extends StatelessWidget {
     final subtitle = GoogleFonts.nunito(fontWeight: FontWeight.w400, fontSize: 14);
 
     return Scaffold(
-      extendBodyBehindAppBar: true, // so gradient can fill under status bar
+      extendBodyBehindAppBar: true,
       backgroundColor: isDark ? Colors.black : Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -29,7 +29,7 @@ class BookDetailPage extends StatelessWidget {
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.pop(context)),
         actions: [
-          // reactive bookmark
+          
           ValueListenableBuilder<List<BookModel>>(
             valueListenable: LibraryManager.instance.books,
             builder: (_, list, __) {
@@ -44,19 +44,19 @@ class BookDetailPage extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          // ── TOP GRADIENT BACKGROUND ──
+          
            Container(
           height: MediaQuery.of(context).size.height * .47,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: isDark
                   ? [
-                      // Deeper tint for dark mode
+                      
                       Theme.of(context).primaryColor.withOpacity(0.25),
                       Theme.of(context).primaryColor.withOpacity(0.10),
                     ]
                   : [
-                      // Softer tint for light mode
+                      
                       Theme.of(context).primaryColor.withOpacity(0.15),
                       Theme.of(context).primaryColor.withOpacity(0.05),
                     ],
@@ -65,7 +65,7 @@ class BookDetailPage extends StatelessWidget {
             ),
           ),
         ),
-          // ── CONTENT ──
+          // 
           Column(
             children: [
               const SizedBox(height: kToolbarHeight + 32),
@@ -81,7 +81,7 @@ class BookDetailPage extends StatelessWidget {
               Text(book.title, style: headline),
               Text(book.author, style: subtitle),
               const SizedBox(height: 16),
-              // Info pill
+              // Info 
               Container(
   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
   margin: const EdgeInsets.symmetric(horizontal: 40),
@@ -107,7 +107,7 @@ class BookDetailPage extends StatelessWidget {
 ),
             ],
           ),
-          // ── DRAGGABLE SHEET ──
+          // draggable sheet
           DraggableScrollableSheet(
             initialChildSize: .38,
             minChildSize: .38,
@@ -138,7 +138,7 @@ class BookDetailPage extends StatelessWidget {
               'Description',
               style: headline.copyWith(
                 fontSize: 16,
-                color: isDark ? Colors.white : Colors.black,  // ← NEW
+                color: isDark ? Colors.white : Colors.black,  
               ),
             ),
             const SizedBox(height: 8),
@@ -153,7 +153,7 @@ class BookDetailPage extends StatelessWidget {
   ),
 )
           ),
-          // ── START READING BUTTON ──
+          // start reading button
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
@@ -168,7 +168,7 @@ class BookDetailPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(14)),
                   ),
                   onPressed: () {
-    ReadingManager.instance.start(book); // keep your now‑reading bar
+    ReadingManager.instance.start(book); 
     Navigator.push(
       context,
       MaterialPageRoute(
