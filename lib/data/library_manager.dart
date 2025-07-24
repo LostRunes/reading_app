@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/book_model.dart';
 
+// keeps track of what books are in the library
 
 class LibraryManager {
   LibraryManager._private();

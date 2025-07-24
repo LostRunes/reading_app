@@ -95,6 +95,7 @@ return ListView.separated(
   separatorBuilder: (_, __) => const SizedBox(height: 12),
   itemBuilder: (_, i) {
     final book = display[i];
+    // for the swipe delete
     return Dismissible(
       key: ValueKey(book.title),
       background: Container(

@@ -28,7 +28,7 @@ class BookRow extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
-              book.assetPath,
+              book.assetPath, 
               width: 60,
               height: 90,
               fit: BoxFit.cover,

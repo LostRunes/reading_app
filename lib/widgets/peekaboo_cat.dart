@@ -33,7 +33,7 @@ class _PeekabooCatState extends State<PeekabooCat>
 
     _runCycle();
   }
-
+// to randomly places and animates the cat
   void _runCycle() async {
     await Future.delayed(Duration(seconds: 2 + _rand.nextInt(4)));
 
