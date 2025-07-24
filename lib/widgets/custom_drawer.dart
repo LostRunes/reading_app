@@ -72,7 +72,7 @@ class CustomDrawer extends StatelessWidget {
                   ),
           ),
 
-          //DRAWER CONTENT
+          //drawer content
           SlideTransition(
             position: slideAnimation,
             child: SizedBox(
@@ -81,7 +81,7 @@ class CustomDrawer extends StatelessWidget {
                 elevation: 0,
                 child: Column(
                   children: [
-                    // HEADER 
+                    // headerr 
                     Container(
                       width: double.infinity,
                       padding:
@@ -113,7 +113,7 @@ class CustomDrawer extends StatelessWidget {
                       ),
                     ),
 
-                    // MENU ITEMS
+                    // menu
                     _DrawerItem(
                       icon: Icons.home,
                       label: 'Home',

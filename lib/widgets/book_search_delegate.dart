@@ -33,7 +33,7 @@ class BookSearchDelegate extends SearchDelegate<BookModel?> {
         onPressed: () => close(context, null),
       );
 
-  // Reusable results logic
+  
   List<BookModel> _results() => source
       .where((b) =>
           b.title.toLowerCase().contains(query.toLowerCase()) ||
